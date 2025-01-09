@@ -8,7 +8,7 @@ const Admin = () => {
   const [fullscreenImage, setFullscreenImage] = useState(null); // State for fullscreen image
 
   const fetchList = async () => {
-    const response = await axios.get('http://localhost:4000/api/file/list');
+    const response = await axios.get('https://docsubmission.onrender.com/api/file/list');
     if (response.data.success) {
       setList(response.data.data);
     } else {
@@ -17,7 +17,7 @@ const Admin = () => {
   };
 
   const removeFood = async (fileId) => {
-    const response = await axios.post('http://localhost:4000/api/file/remove', { id: fileId });
+    const response = await axios.post('https://docsubmission.onrender.com/api/file/remove', { id: fileId });
     await fetchList();
     if (response.data.success) {
       toast.success(response.data.message);
@@ -68,10 +68,10 @@ const Admin = () => {
                 className="w-[50%] h-[50%] object-cover rounded-md"
               /> */}
               <img
-                src={`http://localhost:4000/images/${item.image}`}
+                src={`https://docsubmission.onrender.com/images/${item.image}`}
                 alt={item.name}
                 className="w-[50%] h-[50%] object-cover rounded-md cursor-pointer"
-                onClick={() => handleImageClick(`http://localhost:4000/images/${item.image}`)}
+                onClick={() => handleImageClick(`https://docsubmission.onrender.com/images/${item.image}`)}
               />
             </div>
             {/* Name */}

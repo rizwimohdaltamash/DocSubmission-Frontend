@@ -24,7 +24,7 @@ const ClientForm = () => {
     formData.append("image", image);
     formData.append("uploadDate", new Date().toISOString());
     const response = await axios.post(
-      "http://localhost:4000/api/file/add",
+      "https://docsubmission.onrender.com/api/file/add",
       formData
     );
     if (response.data.success) {

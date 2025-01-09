@@ -48,7 +48,7 @@ const HomePage = ({ setShowLogin }) => {
   // Fetch data from API
   const fetchList = async () => {
     try {
-      const response = await axios.get("http://localhost:4000/api/docuser/displaydata");
+      const response = await axios.get("https://docsubmission.onrender.com/api/docuser/displaydata");
       if (response.data.success) {
         setFetchedData(response.data.data);
       } else {
